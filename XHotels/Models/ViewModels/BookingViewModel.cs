@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
-using XHotels.Models.Enums;
 
-namespace XHotels.Models.Wizard;
+namespace XHotels.Models.ViewModels;
 
 [Serializable]
 public class BookingViewModel

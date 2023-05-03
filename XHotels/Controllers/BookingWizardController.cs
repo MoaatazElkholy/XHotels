@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using XHotels.Infrastructure.Interfaces;
 using XHotels.Models;
 using XHotels.Models.Enums;
-using XHotels.Models.Wizard;
+using XHotels.Models.ViewModels;
 
 namespace XHotels.Controllers;
 
