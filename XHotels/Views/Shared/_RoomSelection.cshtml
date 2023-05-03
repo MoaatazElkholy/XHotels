@@ -1,0 +1,35 @@
+﻿@using XHotels.Models.Enums
+@model XHotels.Models.Wizard.BookingViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Step 2: Choose Room Type and Specify Date and Nights Count</h2>
+        <hr/>
+        <form asp-controller="BookingWizard" asp-action="RoomInformation" method="post">
+            <div class="form-group">
+                <label for="RoomType">Room Type:</label>
+                @* <select class="form-control" id="RoomType" name="RoomType" required> *@
+                @*     <option value="">-- Please select a room type --</option> *@
+                @*     <option value="Standard">Standard</option> *@
+                @*     <option value="Deluxe">Deluxe</option> *@
+                @*     <option value="Suite">Suite</option> *@
+                @* </select> *@
+                <select asp-for="RoomType" id="RoomType" name="RoomType" asp-items="Html.GetEnumSelectList<RoomTypeEnum>()">
+                    <option selected="selected" value="">-- Please select a room type --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ReservationDate">Reservation Date:</label>
+                <input type="date" class="form-control" id="ReservationDate" name="ReservationDate" value="@Model.ReservationDate.ToString("yyyy-MM-dd")" required>
+            </div>
+            <div class="form-group">
+                <label for="NumberOfNights">Number Of Nights:</label>
+                <input type="number" class="form-control" id="NumberOfNights" name="NumberOfNights" value="@Model.NumberOfNights" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Next</button>
+            
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </form>
+    </div>
+
+</div>

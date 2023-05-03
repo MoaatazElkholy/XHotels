@@ -1,0 +1,10 @@
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# .NET compiled files
+bin
+obj
+
+# ide settings
+.idea
+.vs
