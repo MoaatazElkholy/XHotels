@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Step 2: Choose Room Type and Specify Date and Nights Count</h2>
+        <h2>Please Choose Room Type and Specify Date and Nights Count</h2>
         <hr/>
         <form asp-controller="BookingWizard" asp-action="RoomInformation" method="post">
             <div class="form-group">
@@ -25,9 +25,10 @@
             <div class="form-group">
                 <label for="NumberOfNights">Number Of Nights:</label>
                 <input type="number" class="form-control" id="NumberOfNights" name="NumberOfNights" value="@Model.NumberOfNights" required>
+                @Html.ValidationMessageFor(model => model.NumberOfNights, "", new { @class = "text-danger" })
             </div>
             <button type="submit" class="btn btn-primary">Next</button>
-            
+
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </form>
     </div>

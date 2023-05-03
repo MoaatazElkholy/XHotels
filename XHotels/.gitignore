@@ -8,3 +8,4 @@ obj
 # ide settings
 .idea
 .vs
+/LocalDatabase.db

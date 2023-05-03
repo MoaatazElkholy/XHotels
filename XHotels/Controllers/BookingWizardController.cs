@@ -25,7 +25,7 @@ public class BookingWizardController : Controller
     [HttpPost]
     public IActionResult Index(BookingViewModel model)
     {
-        if (ModelState.IsValid)
+        if (ModelState["Name"].Errors.Any() || ModelState["Address"].Errors.Any() || ModelState["Email"].Errors.Any() || ModelState["Phone"].Errors.Any() || ModelState["DateOfBirth"].Errors.Any())
         {
             return View("_CustomerInformation", model);
         }
@@ -54,7 +54,7 @@ public class BookingWizardController : Controller
     [HttpPost]
     public async Task<IActionResult> RoomInformation(BookingViewModel model)
     {
-        if (ModelState.IsValid)
+        if (ModelState["NumberOfNights"].Errors.Any() || ModelState["ReservationDate"].Errors.Any() || ModelState["RoomType"].Errors.Any())
         {
             return View("_RoomSelection", model);
         }
